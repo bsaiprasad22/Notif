@@ -25,10 +25,9 @@ function displayList() {
     itemsarr.forEach((ele, idx) => {
         innhtml += `<div class="item">
         <input type="checkbox" name="check" id="c${idx}" class="checkbtn">
-        <i class="far fa-star"></i>
-        <div class="note itemtxt">${ele}</div>
-        <button class="delbtn2" id="d${idx}" onclick="delItem(this.id)">Delete item</button>
-        <button class="delbtn2" id="s${idx}" onclick="star(this.id)">Pin</button>
+        <button class="delbtn2" id="s${idx}"><i class="fa fa-lg fa-star"></i></button>
+        <div class="note">${ele}</div>
+        <button class="delbtn2" id="d${idx}" onclick="delItem(this.id)"><i class="fa fa-lg fa-trash"></i></button>
     </div>`
     });
     listitems.innerHTML = innhtml;
@@ -74,10 +73,18 @@ function delItem(index) {
     displayList();
 }
 
-function star(index) {
-    // console.log(document.getElementById(index).innerText);
-    index = index.slice(1, );
-    let item = itemsarr.splice(index, 1);
-    itemsarr.unshift(item);
-    displayList();
-}
+document.getElementById('listContainer').addEventListener('click', (e) => {
+    if(e.target.tagName == "BUTTON"){
+        e.target.parentElement.querySelector('div').classList.toggle('starred');
+    }
+
+    else if(e.target.tagName == "I"){
+        e.target.parentElement.parentElement.querySelector('div').classList.toggle('starred');
+    }
+});
+
+document.getElementById('listContainer').addEventListener('click', (ev) => {
+    if(ev.target.tagName == "INPUT"){
+        ev.target.parentElement.querySelector('div').classList.toggle("checkednote");
+    }
+});
