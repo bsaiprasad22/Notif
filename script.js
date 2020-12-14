@@ -45,7 +45,7 @@ document.getElementById('listContainer').addEventListener('click', e => {
     }
 });
 
-document.getElementById('listContainer').addEventListener('keyup', e => {
+document.getElementById('listContainer').addEventListener('keydown', e => {
     if (e.code == "Enter") {
         if (e.target.tagName == "TEXTAREA") {
             e.target.parentElement.innerHTML = e.target.value;
