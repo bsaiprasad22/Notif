@@ -20,17 +20,17 @@ additem.addEventListener("click", () => {
 
 
 document.getElementById('listContainer').addEventListener('click', (e) => {
-    if(e.target.tagName == "BUTTON"){
+    if (e.target.tagName == "BUTTON") {
         e.target.parentElement.querySelector('div').classList.toggle('starred');
     }
 
-    else if(e.target.tagName == "I"){
+    else if (e.target.tagName == "I") {
         e.target.parentElement.parentElement.querySelector('div').classList.toggle('starred');
     }
 });
 
 document.getElementById('listContainer').addEventListener('click', (ev) => {
-    if(ev.target.tagName == "INPUT"){
+    if (ev.target.tagName == "INPUT") {
         ev.target.parentElement.querySelector('div').classList.toggle("checkednote");
     }
 });
@@ -38,17 +38,19 @@ document.getElementById('listContainer').addEventListener('click', (ev) => {
 let clicks = 0;
 
 document.getElementById('listContainer').addEventListener('click', e => {
-    if(e.target.tagName == "DIV" && e.target.className == "note" && clicks == 0){
+    if (e.target.tagName == "DIV" && e.target.className == "note" && clicks == 0) {
         clicks = clicks + 1;
         let existingText = e.target.innerText;
-        e.target.innerHTML = `<textarea class="editNote" columns = 50 rows = 2>${existingText}</textarea>`;
+        e.target.innerHTML = `<textarea class="editNote" columns = 5 rows = 2>${existingText}</textarea>`;
     }
 });
 
-document.getElementById('listContainer').addEventListener('dblclick', e => {
-    if(e.target.tagName == "TEXTAREA") {
-        e.target.parentElement.innerHTML = e.target.value;
-        clicks = 0;
+document.getElementById('listContainer').addEventListener('keyup', e => {
+    if (e.code == "Enter") {
+        if (e.target.tagName == "TEXTAREA") {
+            e.target.parentElement.innerHTML = e.target.value;
+            clicks = 0;
+        }
     }
 });
 

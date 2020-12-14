@@ -159,6 +159,7 @@
 
 .editNote{
     margin: 0;
+    width: 100%;
     border: none;
     background-color: #f6cd61;
     font-family: 'Nerko One', cursive;
