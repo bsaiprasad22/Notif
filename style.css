@@ -49,6 +49,7 @@
 
 #addNote{
     display: flex;
+    align-items: center;
     flex-direction: column;
     background-color: #0e9aa7;
     padding: 30px;
@@ -79,6 +80,9 @@
 
 .Heading{
     font-size: 2rem;
+    display: block;
+    margin: auto;
+    width: 300px;
     text-align: center;
     color: whitesmoke;
     padding: 15px;
@@ -90,7 +94,8 @@
 #listContainer{
     background-color: #3da4ab;
     margin: 0;
-    min-height: 70vh;
+    height: fit-content;
+    min-height: 80vh;
     width: 100%;
 }
 
@@ -167,4 +172,63 @@
     text-align: center;
     vertical-align: middle;
     justify-content: center;
+}
+
+textarea{
+    resize: vertical;
+    /* overflow: auto; */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .small-font{
+      font-size: 15px;
+      font-weight: normal;
+      padding: 2px;
+  }
+
+  #filter-btn{
+    position: fixed;
+  }
+
+  .invisible{
+    display: none;  
+  }
+
+.shrink {
+    width: 70%;
+    margin: 20px;
+}
+
+#percentage {
+    width: 0;
+}
+
+#task-stats {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
