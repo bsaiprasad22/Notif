@@ -9,8 +9,7 @@ let index = 0;
 let totalTasks = 0;
 let completedTasks = 0;
 
-additem.addEventListener("click", () => {
-
+function createNote() {
     let Div = document.createElement('div');
     Div.className = 'item';
     Div.innerHTML = `<input type="checkbox" name="check" class="checkbtn">
@@ -29,7 +28,14 @@ additem.addEventListener("click", () => {
     document.getElementById('percentage').style.width = `${((completedTasks/totalTasks)*100).toFixed(2)}%`;
     document.getElementById('percentage').innerText = `${((completedTasks/totalTasks)*100).toFixed(2)}%`;
     document.getElementById('task-stats').innerText = `Tasks completed: ${completedTasks}/${totalTasks}`;
+}
 
+additem.addEventListener("click", createNote);
+
+addtxt.addEventListener("keydown", (e) => {
+    if (e.code == "Enter"){
+        createNote();
+    }
 });
 
 

@@ -35,6 +35,7 @@
     background-color: #fe8a71;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.7s ease;
 }
 
 #additem:hover{
@@ -45,6 +46,7 @@
     background-color:  #9e503e;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 #addNote{
@@ -69,7 +71,12 @@
     background-color: #f6cd61;
     font-family: 'Nerko One', cursive;
     font-size: 20px;
+    transition: transform 0.5s ease;
+}
 
+.note:hover{
+    transition: transform 0.1s ease;
+    transform: scale(1.01);
 }
 
 
@@ -127,6 +134,7 @@
     border-radius: 5px;
     font-weight: bold;
     padding: 2px;
+    transition: background-color 1s ease;
 }
 
 .delbtn2:hover{
@@ -142,6 +150,7 @@
     border-radius: 5px;
     font-weight: bold;
     padding: 2px;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -225,6 +234,7 @@ textarea{
 
 #percentage {
     width: 0;
+    transition: width 0.5s ease;
 }
 
 #task-stats {
