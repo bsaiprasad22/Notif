@@ -7,6 +7,10 @@
     font-family: 'Texturina', serif;
 }
 
+body {
+    width: 100vw;
+}
+
 .heading{
     text-align: center;
     padding: 15px;
@@ -51,6 +55,7 @@
 
 #addNote{
     display: flex;
+    width: 100vw;
     align-items: center;
     flex-direction: column;
     background-color: #0e9aa7;
@@ -89,7 +94,7 @@
     font-size: 2rem;
     display: block;
     margin: auto;
-    width: 300px;
+    width: 100vw;
     text-align: center;
     color: whitesmoke;
     padding: 15px;
@@ -193,6 +198,10 @@ textarea{
     display: inline-block;
     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
   }
+
+  #allitems {
+      width: 100vw;
+  }
   
   /* Tooltip text */
   .tooltip .tooltiptext {
@@ -241,4 +250,10 @@ textarea{
     font-size: 1.25em;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width:570px) {
+    #filter-btn{
+        position: relative;
+    }
 }
